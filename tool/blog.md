@@ -1,5 +1,6 @@
 # 本地运行gitbook
 
+npm i gitbook-cli -g
 gitbook serve
 
 http://localhost:4000/ 预览
