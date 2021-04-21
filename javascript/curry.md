@@ -19,7 +19,6 @@ function add(a) {
 #### 什么是函数柯里化
 把接受多个参数的函数变换成接受一个单一参数的函数。
 
-
 #### 函数柯里化的实现
 ```javascript
 var curry = fn =>
@@ -45,3 +44,4 @@ var curry = fn =>
 
 #### 参考文档
 https://zh.wikipedia.org/zh/%E6%9F%AF%E9%87%8C%E5%8C%96
+https://github.com/mqyqingfeng/Blog/issues/42
