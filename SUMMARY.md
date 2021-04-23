@@ -7,6 +7,7 @@
 * [javascript基础](javascript/README.md)
   * [js里的循环](javascript/loop.md)
   * [柯里化](javascript/curry.md)
+  * [函数式编程](javascript/fp.md)
 * [git](javascript/README.md)
   * [git中常用的操作](javascript/loop.md)
 * [工具](tool/README.md)

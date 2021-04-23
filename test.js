@@ -1,25 +1,40 @@
-// function add(a) {
-//   return function (b) {
-//     return function (c) {
-//       return a + b + c
-//     }
-//   }
-// }
 
-
-
-var curry = fn =>{
-  return judge = (...args) => {
-    console.log(fn.length, args);
-    return args.length === fn.length
-      ? fn(...args)
-      : (arg) => judge(...args, arg)
+function compose(...funcs) {
+  if (funcs.length === 0) {
+    return arg => arg;
   }
+
+  if (funcs.length === 1) {
+    return funcs[0];
+  }
+
+  return funcs.reduce((a, b) => {
+    return (...args) => {
+      return a(b(...args))
+    }
+  });
 }
 
+let sayHello = (...str) => `Hello , ${str.join(" And ")}`;
+let toUpper = str => str.toUpperCase();
+let replace = str => str.replace('a','replace');
+// let combin = compose(
+//   sayHello,
+//   toUpper,
+//   replace
+// );
 
-const add = curry((a,b,c)=>{
-  return a+b+c
-})
+// console.log('combin', combin);
 
-console.log(add(1,2)(3));
+const d = [sayHello,
+  toUpper,
+  replace].reduce((a,b)=>{
+    console.log(a,b);
+    return c = (...params)=>{
+      return a(b(...params))
+    }
+  })
+
+console.log(d);
+
+console.log(combin('alice')); //Hello , REPLACELICE
