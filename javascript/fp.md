@@ -59,7 +59,7 @@ console.log(combin('alice')); //Hello , REPLACELICE
 
 ```
 
-分析下compose函数，使用reduce累计器，第一次调用sayHello和toUpper函数返回一个新的函数，成为a，下一次a和replace函数组合返回新的函数b。执行顺序是replace、toUpper、sayHello从右往左的顺序。
+分析下compose函数，使用reduce累计器，第一次调用sayHello和toUpper函数返回一个新的函数，称为a，下一次a和replace函数组合返回新的函数b。执行顺序是replace、toUpper、sayHello从右往左的顺序。
 
 ### curry
 
