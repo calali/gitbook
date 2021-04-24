@@ -10,6 +10,8 @@
   * [函数式编程](javascript/fp.md)
 * [git](javascript/README.md)
   * [git中常用的操作](javascript/loop.md)
+* [计算机基础](computer/README.md)
+  * [算法与数据结构](computer/arg.md)
 * [工具](tool/README.md)
   * [博客选型](tool/blog.md)
 * [其他](other/README.md)
