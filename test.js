@@ -1,32 +1,27 @@
-async function async1() {
-  console.log('async1 start')
-  await async2()
-  console.log('async1 end')
-  process.nextTick(() => console.log('nextTick1'));
+const p = function () {
+  return new Promise((resolve, reject) => {
+    const p1 = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(1)
+      }, 0)
+      resolve(2)
+    })
+    p1.then((res) => {
+      console.log(res);
+    })
+    console.log(3);
+    resolve(4);
+  })
 }
-async function async2() {
-  process.nextTick(() => console.log('nextTick2'));
-  console.log('async2')
-}
-console.log('script start')
 
-setTimeout(function () {
-  console.log('setTimeout3')
-}, 3)
-setImmediate(() => {
-  process.nextTick(() => console.log('nextTick3'));
-  console.log('setImmediate')
-});
-process.nextTick(() => console.log('nextTick4'));
-async1();
-process.nextTick(() => console.log('nextTick5'));
-new Promise(function (resolve) {
-  console.log('promise1')
-  resolve();
-  console.log('promise2')
-  process.nextTick(() => console.log('nextTick6'));
-}).then(function () {
-  process.nextTick(() => console.log('nextTick7'));
-  console.log('promise3')
+
+p().then((res) => {
+  console.log(res);
 })
-console.log('script end')
+console.log('end');
+
+
+// 3
+// end
+// 2
+// 4

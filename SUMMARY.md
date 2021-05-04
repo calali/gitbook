@@ -9,6 +9,7 @@
   * [事件循环](javascript/eventloop.md)
   * [nodejs事件循环](javascript/nodejsEventloop.md)
   * [JavaScript运行时](javascript/runtime.md)
+  * [requestAnimationFrame](javascript/requestAnimationFrame.md)
   * [函数柯里化](javascript/curry.md)
   * [函数式编程](javascript/fp.md)
 * [git](javascript/README.md)

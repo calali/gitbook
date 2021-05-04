@@ -88,7 +88,7 @@ promise2
 
 setTimeout
 
-注意async函数里的await后的代码都是异步执行的。TODO 为什么呢？
+注意async函数里的await后的代码都是异步执行的，及promise.then中的执行顺序。
 
 ### 题目二
 
@@ -157,7 +157,15 @@ p().then((res) => {
 console.log('end');
 ```
 
-TODO
+执行结果:
+
+3
+
+end
+
+2
+
+4
 
 ## 相关问题
 
@@ -168,11 +176,12 @@ web api是如事件回调浏览器放到宏任务队列的，v8没有浏览器�
 见[浏览器渲染原理](./browser.md)
 
 3. JavaScript运行时都包含什么呢？
-TODO
+参考[JavaScript运行时](./runtime.md)
 
 4. requestAnimationFrame是宏任务还是微任务?
-TODO
+参考[requestAnimationFrame](./requestAnimationFrame.md)
 
 ## 参考资料
 
 1. https://segmentfault.com/a/1190000022805523
+2. https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/async_function
