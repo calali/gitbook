@@ -1,6 +1,6 @@
 # 函数式编程
 
-面向对象的编程关注数据，函数式编程关注逻辑。
+面向对象的编程关注数据，函数式编程关注过程。
 
 ## 几个概念
 
@@ -16,7 +16,7 @@
 
 副作用是在计算结果的过程中，系统状态的一种变化，或者与外部世界进行的可观察的交互。
 
-举个例子，js里的slice是纯函数，splice不是纯函数。
+举个例子，js里的slice是纯函数，splice不是纯函数,因为slice没有修改传入的数组，而splice修改了传入的数组。
 
 #### 纯函数的好处
 
@@ -67,9 +67,8 @@ console.log(combin('alice')); //Hello , REPLACELICE
 
 ### 参考文档
 
-<https://juejin.cn/post/6844903988647690254>
-<https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/content/>
-<https://juejin.cn/post/6844903638368780295>
-<https://juejin.cn/post/6844903638368780295>
-<https://juejin.cn/post/6844903936378273799>
-<https://juejin.cn/post/6844903988647690254>
+1. <https://juejin.cn/post/6844903988647690254>
+2. <https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/content/>
+3. <https://juejin.cn/post/6844903638368780295>
+4. <https://juejin.cn/post/6844903936378273799>
+5. <https://juejin.cn/post/6844903988647690254>

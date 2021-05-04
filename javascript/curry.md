@@ -21,9 +21,9 @@ function add(a) {
 
 顿时发现事情没那么简单，这里就需要柯里化来实现，咱们继续往下看。
 
-### 函数柯里化的实现
+### 函数柯里化
 
-函数柯里化含义是把接收多个参数的函数变换成接收一个单一参数的函数。
+函数柯里化是把接收多个参数的函数变换成接收一个单一参数的函数。
 
 举个例子，add函数接收3个参数。
 
@@ -55,7 +55,7 @@ var curry = fn => {
    return  judge = (...args) => {
        return args.length === fn.length
             ? fn(...args)
-            : (arg) => judge(...args, arg) //参数数量还不够，继续收集参数
+            : (...subArgs) => judge(...args, ...subArgs) //参数数量还不够，继续收集参数
    }
 
 }
@@ -71,6 +71,7 @@ const add = curry((a,b,c)=>{
 
 console.log(add(1)(2)(3)) //6
 console.log(add(1,2)(3)) //6
+console.log(add(1)(2,3)) //6
 ```
 
 满足要求。即使add传100个参数也OK。
@@ -85,8 +86,6 @@ curry后的add函数，每次执行后返回的函数，包裹了一部分参数
 
 fn并不直接执行，而是经过curry处理后逐步获取参数再执行。
 
-#### 为什么面试要问函数柯里化？
-
 #### 相关领域
 
 [函数式编程](./fp.md)
@@ -95,3 +94,4 @@ fn并不直接执行，而是经过curry处理后逐步获取参数再执行。
 
 <https://zh.wikipedia.org/zh/%E6%9F%AF%E9%87%8C%E5%8C%96>
 <https://github.com/mqyqingfeng/Blog/issues/42>
+<https://juejin.cn/post/6844903603266650125>
