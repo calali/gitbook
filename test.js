@@ -1,27 +1,20 @@
-const p = function () {
-  return new Promise((resolve, reject) => {
-    const p1 = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(1)
-      }, 0)
-      resolve(2)
-    })
-    p1.then((res) => {
-      console.log(res);
-    })
-    console.log(3);
-    resolve(4);
-  })
+
+
+
+Function.prototype.call = function (context, ...args) {
+  context = context === undefined || context === null ? window : Object(context)
+  const fn = Symbol('fn')
+  context[fn] = this
+  context[fn](...args)
 }
 
+function greet() {
+  var reply = [this.animal, 'typically sleep between', this.sleepDuration].join(' ');
+  console.log(reply);
+}
 
-p().then((res) => {
-  console.log(res);
-})
-console.log('end');
+var obj = {
+  animal: 'cats', sleepDuration: '12 and 16 hours'
+};
 
-
-// 3
-// end
-// 2
-// 4
+greet.call(obj);  // cats typically sleep between 12 and 16 hours

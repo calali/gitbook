@@ -6,6 +6,8 @@
   * [vue全家福](vue/vueAll.md)
 * [javascript基础](javascript/README.md)
   * [js里的迭代](javascript/loop.md)
+  * [javascript中的this](javascript/this.md)
+  * [apply、call和bind](javascript/apply.md)
   * [事件循环](javascript/eventloop.md)
   * [nodejs事件循环](javascript/nodejsEventloop.md)
   * [JavaScript运行时](javascript/runtime.md)
