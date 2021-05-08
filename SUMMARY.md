@@ -26,6 +26,3 @@
 * [业务](business/README.md)
   * [投放业务](business/ad.md)
 
-<!--
-  todo
-  1vue typescript项目里实践decorator -->
