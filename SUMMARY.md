@@ -25,3 +25,7 @@
   * [我心目中的优秀技术leader](other/manage.md)
 * [业务](business/README.md)
   * [投放业务](business/ad.md)
+
+<!--
+  todo
+  1vue typescript项目里实践decorator -->
