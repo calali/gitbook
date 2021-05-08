@@ -76,6 +76,7 @@ Function.prototype.bind = function(context, ...bindArgs) {
 ```
 
 ### 4 测试用例
+TODO
 
 ## 参考资料
 
