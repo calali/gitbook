@@ -7,6 +7,7 @@
   * [apply、call和bind](javascript/apply.md)
   * [JavaScript运行时](javascript/runtime.md)
   * [context](javascript/context.md)
+  * [闭包](javascript/closure.md)
   * [requestAnimationFrame](javascript/requestAnimationFrame.md)
 * [浏览器](browser/README.md)
   * [事件循环](browser/eventloop.md)
