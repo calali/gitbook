@@ -10,7 +10,7 @@
 function decorator (target, key, descriptor) {
   // target是装饰对象，可以是类或者类的属性
   // key是方法名
-  //descriptor属性描述符
+  //descriptor属性描述符:value、writable、enumerable、configurable
 }
 ```
 ## 可以装饰的范围

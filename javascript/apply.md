@@ -85,3 +85,4 @@ TODO
 3. <https://juejin.cn/post/6844903763564560397>
 4. <https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object>
 5. <https://www.jianshu.com/p/7f2cdb8297f5>
+6. https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/globalThis
