@@ -3,3 +3,5 @@
 和事件绑定在哪个元素上相关吗
 
 TODO
+
+https://juejin.cn/post/6844904025993773063#heading-6

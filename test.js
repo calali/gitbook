@@ -1,26 +1,22 @@
-let Person = {
-  name: 'Tom',
-  say() {
-      console.log(this) //{ name: 'Tom1' }
-      console.log(`我叫${this.name}`) // 我叫Tom1
+
+// 无递归数组扁平化，使用堆栈
+// 注意：深度的控制比较低效，因为需要检查每一个值的深度
+// 也可能在 shift / unshift 上进行 w/o 反转，但是末端的数组 OPs 更快
+var arr1 = [1, 2, 3, [1, 2, 3, 4, [2, 3, 4]]];
+function flatten(input) {
+  const stack = [...input];
+  const res = [];
+  while (stack.length) {
+    // 使用 pop 从 stack 中取出并移除值
+    const next = stack.pop();
+    if (Array.isArray(next)) {
+      // 使用 push 送回内层数组中的元素，不会改动原始输入
+      stack.push(...next);
+    } else {
+      res.push(next);
+    }
   }
+  // 反转恢复原数组的顺序
+  return res.reverse();
 }
-
-// 先看代码执行效果
-// Person.say() //我叫Tom 
-let Person1 = {
-  name: 'Tom1'
-}
-
-// 我们尝试用原生方法call来实现this指向Person1
-Person.say.call(Person1) //我叫Tom1
-
-// Function.prototype.MyCall = function(context) {
-//   //context就是demo中的Person1
-//   // 必须此时调用MyCall的函数是say方法，那么我们只需要在context上扩展一个say方法指向调用MyCall的say方法这样this
-//   console.log(123,this,context)
-//   context.say = this //Mycall里边的this就是我们虚拟的say方法
-//   context.say()
-// }
-// // 测试
-// Person.say.MyCall(Person1)//我叫Tom1
+flatten(arr1);// [1, 2, 3, 1, 2, 3, 4, 2, 3, 4]
