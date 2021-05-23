@@ -22,5 +22,16 @@
 // flatten(arr1);// [1, 2, 3, 1, 2, 3, 4, 2, 3, 4]
 
 
-var arr1 = [1, 2, [3, 4],5,[6,[[7],8],9],10];
-console.log(arr1.flat(Infinity))
+// var arr1 = [1, 2, [3, 4],5,[6,[[7],8],9],10];
+// console.log(arr1.flat(Infinity))
+
+// 使用 reduce、concat 和递归展开无限多层嵌套的数组
+var arr1 = [1,2,3,[1,2,3,4, [2,3,4]]];
+
+function flatDeep(arr, d = 1) {
+   return d > 0 ? arr.reduce((acc, val) => acc.concat(Array.isArray(val) ? flatDeep(val, d - 1) : val), [])
+                : arr.slice();
+};
+
+flatDeep(arr1, Infinity);
+// [1, 2, 3, 1, 2, 3, 4, 2, 3, 4]
