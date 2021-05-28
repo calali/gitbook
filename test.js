@@ -103,5 +103,5 @@ console.log(flatten(arr1, 2))
 // [1, 2, 3, 1, 2, 3, 4, 2, 3, 4]
 
 总结下flat的实现方法:
-1. reduce、forEach、for of、stack都可以实现，要注意到一定层数停止递归
-2. 注意空位的处理
+// 1. reduce、forEach、for of、stack都可以实现，要注意到一定层数停止递归
+// 2. 注意空位的处理
