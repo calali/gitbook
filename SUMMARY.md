@@ -8,6 +8,7 @@
   * [context](javascript/context.md)
   * [闭包](javascript/closure.md)
   * [reduce](javascript/reduce.md)
+  * [flat](javascript/flat.md)
   * [iterator](javascript/iterator.md)
 * [浏览器](browser/README.md)
   * [事件循环](browser/eventloop.md)

@@ -1,107 +1,26 @@
 
-// // 无递归数组扁平化，使用堆栈
-// // 注意：深度的控制比较低效，因为需要检查每一个值的深度
-// // 也可能在 shift / unshift 上进行 w/o 反转，但是末端的数组 OPs 更快
-// var arr1 = [1, 2, 3, [1, 2, 3, 4, [2, 3, 4]]];
-// function flatten(input) {
-//   const stack = [...input];
-//   const res = [];
-//   while (stack.length) {
-//     // 使用 pop 从 stack 中取出并移除值
-//     const next = stack.pop();
-//     if (Array.isArray(next)) {
-//       // 使用 push 送回内层数组中的元素，不会改动原始输入
-//       stack.push(...next);
-//     } else {
-//       res.push(next);
-//     }
-//   }
-//   // 反转恢复原数组的顺序
-//   return res.reverse();
-// }
-// flatten(arr1);// [1, 2, 3, 1, 2, 3, 4, 2, 3, 4]
+
+Array.prototype.myReduce = function(fn,initalValue){
+  const arr = this
+  if(!arr.length){
+    throw new TypeError('Reduce of empty array with no initial value')
+  }
+  //不提供初始值则使用数组里的第一项
+  let finalInitalValue = initalValue === undefined ? arr[0] : initalValue
+  let startIndex = initalValue === undefined ? 1 : 0
+  
+  let result = finalInitalValue
+  arr.slice(startIndex).map((value)=>{
+    result = fn(result,value,startIndex,arr)
+    startIndex+=1
+  })
+  return result
+}
 
 
-// var arr1 = [1, 2, [3, 4],5,[6,[[7],8],9],10];
-// console.log(arr1.flat(Infinity))
-
-// 使用 reduce、concat 和递归展开无限多层嵌套的数组
-var arr1 = [1,2,3,[1,2,3,4, [2,3,4]]];
-
-function flatDeep(arr, d = 1) {
-   return d > 0 ? arr.reduce((acc, val) => acc.concat(Array.isArray(val) ? flatDeep(val, d - 1) : val), [])
-                : arr.slice();
-};
-
-flatDeep(arr1, Infinity);
-// [1, 2, 3, 1, 2, 3, 4, 2, 3, 4]
-
-
-// // console.log(arr1.flat(Infinity))
-
-// // 使用 reduce、concat 和递归展开无限多层嵌套的数组
-// // var arr1 = [1, 2, 3, [1, 2, 3, 4, [2, 3, 4]]];
-
-// function flatDeep(arr, d = 1) {
-//   return d > 0 ? arr.reduce((acc, val) => acc.concat(Array.isArray(val) ? flatDeep(val, d - 1) : val), [])
-//     : arr.slice();
-// };
-// // forEach 遍历数组会自动跳过空元素
-// const eachFlat = (arr = [], depth = 1) => {
-//   const result = []; // 缓存递归结果
-//   // 开始递归
-//   (function flat(arr, depth) {
-//     // forEach 会自动去除数组空位
-//     arr.forEach((item) => {
-//       // 控制递归深度
-//       if (Array.isArray(item) && depth > 0) {
-//         // 递归数组
-//         flat(item, depth - 1)
-//       } else {
-//         // 缓存元素
-//         result.push(item)
-//       }
-//     })
-//   })(arr, depth)
-//   // 返回递归结果
-//   return result;
-// }
-
-// // for of 循环不能去除数组空位，需要手动去除
-// const forFlat = (arr = [], depth = 1) => {
-//   const result = [];
-//   (function flat(arr, depth) {
-//     for (let item of arr) {
-//       if (Array.isArray(item) && depth > 0) {
-//         flat(item, depth - 1)
-//       } else {
-//         // 去除空元素，添加非undefined元素
-//         item !== void 0 && result.push(item);
-//       }
-//     }
-//   })(arr, depth)
-//   return result;
-// }
-// function flatten(input) {
-//   const stack = [...input];
-//   const res = [];
-//   while (stack.length) {
-//     // 使用 pop 从 stack 中取出并移除值
-//     const next = stack.pop();
-//     if (Array.isArray(next)) {
-//       // 使用 push 送回内层数组中的元素，不会改动原始输入
-//       stack.push(...next);
-//     } else {
-//       res.push(next);
-//     }
-//   }
-//   // 反转恢复原数组的顺序
-//   return res.reverse();
-// }
-var arr1 = [1, 2, [3, 4], 5, [6, [[7], 8], 9], 10];
-console.log(flatten(arr1, 2))
-// [1, 2, 3, 1, 2, 3, 4, 2, 3, 4]
-
-总结下flat的实现方法:
-// 1. reduce、forEach、for of、stack都可以实现，要注意到一定层数停止递归
-// 2. 注意空位的处理
+const arr = [1,2,3]
+const result = arr.myReduce(function(accumulator,currentValue,currentIndex,sourceArray){
+  console.log(currentIndex)
+  return accumulator + currentValue
+},4)
+console.log(result);
