@@ -12,6 +12,7 @@
   * [iterator](javascript/iterator.md)
 * [浏览器](browser/README.md)
   * [事件循环](browser/eventloop.md)
+  * [当我们输入在浏览器中输入URL，浏览器里发生了什么？](browser/browser.md)
   * [requestAnimationFrame](browser/requestAnimationFrame.md)
 * [vue相关](vue/README.md)
   * [watchEffect和watch的区别](vue/watchEffect.md)
