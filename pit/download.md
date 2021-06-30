@@ -76,7 +76,7 @@ downloadImage('https:wwww.a.com/a/b','某个指定的值')
 
 除了这种方法，是否还有其他的下载方法可以下载素材呢？
 
-对于图片，还可以使用canvas进行下载
+### 对于图片和视频，还可以使用canvas进行下载
 
 ```javascript
 export function downloadImg(img) {
@@ -106,7 +106,12 @@ export function downloadImg(img) {
 ```
 也用到了a链接的download属性，缺点是图片会比实际体积大。在项目中就踩到了这个坑。把图片画到canvas上，图片导出时的编码是base64，这种编码导致图片体积变大约33%。
 
+### http请求下载
+[Content-Disposition: attachment; filename="filename.jpg"](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Content-Disposition)
+
+放到云服务上的文件可以通过这种方式从云端直接下载和重命名。
 ## 参考资料
 1. https://www.jianshu.com/p/6545015017c4
 2. https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLCanvasElement/toDataURL
 3. https://stackoverflow.com/questions/4715415/base64-what-is-the-worst-possible-increase-in-space-usage
+4. https://cloud.tencent.com/document/product/436/14115
