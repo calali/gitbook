@@ -17,6 +17,8 @@
 * [vue相关](vue/README.md)
   * [watchEffect和watch的区别](vue/watchEffect.md)
   * [vue全家福](vue/vueAll.md)
+* [源码分析](source/README.md)
+  * [git中常用的操作](source/http.md)
 * [node.js基础](nodejs/README.md)
   * [node.js里的事件循环](nodejs/eventloop.md)
 * [编程](program/README.md)
