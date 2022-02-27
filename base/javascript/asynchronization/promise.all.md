@@ -40,7 +40,7 @@ const race = (promiseList)=>{
 }
 ```
 
-实现代码，利用了promise的状态一旦fulfilled或rejected，就不能再被改变。从而捕获了首先改变状态的promise。
+实现代码利用了promise的状态一旦fulfilled或rejected，就不能再被改变，从而捕获了首先改变状态的promise。
 
 测试：
 
@@ -109,3 +109,12 @@ all([promise1, promise2]).then((value) => {
 	console.log('error', e);
 })
 ```
+
+new MyPromise((res,rej)=>{
+    res('a')
+}).then(res=>{
+console.log('1',res);
+return 'aa'
+}).then(res=>{
+console.log('11',res);
+})
