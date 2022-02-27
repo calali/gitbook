@@ -40,4 +40,6 @@
 
 [✅] promise基础版本
 
+[✅] promise链式调用
+
 [✅] promise.all、promise.race实现
