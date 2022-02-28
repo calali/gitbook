@@ -3,6 +3,7 @@
 * [基础](base/README.md)
   * [javascript](base/javascript/readme.md)
     * [函数](base/javascript/function.md)
+      * [this](base/javascript/function/this.md)
       * [函数传参按值传递](base/javascript/function/function-arg.md)
     * [异步](base/javascript/asynchronization.md)
       * [事件循环](base/javascript/asynchronization/eventloop.md)
@@ -23,7 +24,7 @@
     * [我心目中的优秀技术leader](other/manage.md) -->
 
 
- <!-- * [javascript中的this](javascript/this.md)
+ <!-- *
     * [apply、call和bind](javascript/apply.md)
     * [JavaScript运行时](javascript/runtime.md)
     * [context](javascript/context.md)
