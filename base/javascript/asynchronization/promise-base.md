@@ -58,7 +58,6 @@ class MyPromise {
             throw new Error('MyPromise需要传入一个函数')
         }
         try {
-            //TODO 为什么这里要bind??
             setTimeout(()=>{
                 executor(this.resolve.bind(this),this.reject.bind(this))
             },0)
