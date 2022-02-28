@@ -5,6 +5,7 @@
     * [函数](base/javascript/function.md)
       * [函数传参按值传递](base/javascript/function/function-arg.md)
     * [异步](base/javascript/asynchronization.md)
+      * [事件循环](base/javascript/asynchronization/eventloop.md)
       * [promise基础版本](base/javascript/asynchronization/promise-base.md)
       * [一步步实现promise的链式调用](base/javascript/asynchronization/promise-then.md)
       * [实现promise.all和（或）promise.race](base/javascript/asynchronization/promise.all.md)

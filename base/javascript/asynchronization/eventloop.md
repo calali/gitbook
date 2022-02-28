@@ -1,8 +1,8 @@
-# 深度解析事件循环
+# 事件循环
 
 ## 什么是事件循环？
 
-javascript在浏览器和v8引擎里运行,javaScript是单线程非阻塞的语言。
+javascript在浏览器和v8引擎里运行，javaScript是单线程非阻塞的语言。
 
 那么是如何做到非阻塞执行的呢？靠的就是事件循环。
 
@@ -17,31 +17,31 @@ javascript在浏览器和v8引擎里运行,javaScript是单线程非阻塞的语
 5. 渲染完毕后，JS线程继续接管，开始下一个宏任务（从事件队列中获取）
 
 简单总结一下执行的顺序：
-执行宏任务，然后执行该宏任务产生的微任务，若微任务在执行过程中产生了新的微任务，则继续执行微任务，微任务执行完毕后，再回到宏任务中进行下一轮循环。
+执行宏任务，然后执行该宏任务产生的微任务，若微任务在执行过程中产生了新的微任务，则继续执行微任务，所有微任务执行完毕后，再回到宏任务中进行下一轮循环。
 
 优先级：微任务>宏任务
 
 ## 任务分类
 
-### 宏任务
+### 宏任务分类
 
 1. 一段新程序或子程序被直接执行时
-2. 触发了一个事件，将其回调函数添加到任务队列时。
-3. 执行到一个由 setTimeout() 或 setInterval() 创建的 timeout 或 interval，以致相应的回调函数被添加到任务队列时。
+2. 触发了一个事件，将其回调函数添加到任务队列时
+3. 执行到一个由 setTimeout() 或 setInterval() 创建的 timeout 或 interval，以致相应的回调函数被添加到任务队列时
 4. postMessage
 5. requestAnimationFrame
 
-### 微任务
+### 微任务分类
 
 1. promises ：Promise.then、Promise.catch、Promise.finally等相关api。
 2. MutationObserver(html5 新特性)
 3. queueMicrotask(自定义微任务)
 
-## node和浏览器里的事件循环的区别
+<!-- ## node和浏览器里的事件循环的区别
 
 node11及以后版本和浏览器里的执行顺序一致。
 
-详细参考[nodejs事件循环](./nodejsEventloop.md)
+详细参考[nodejs事件循环](./nodejsEventloop.md) -->
 
 ## 事件循环面试题目
 
