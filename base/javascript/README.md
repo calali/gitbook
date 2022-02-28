@@ -4,7 +4,7 @@
 
 [✅] 函数传参按值传递
 
-[] this
+[✅] this
 
 [] apply、bind
 

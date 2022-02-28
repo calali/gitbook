@@ -10,6 +10,8 @@
       * [promise基础版本](base/javascript/asynchronization/promise-base.md)
       * [一步步实现promise的链式调用](base/javascript/asynchronization/promise-then.md)
       * [实现promise.all和（或）promise.race](base/javascript/asynchronization/promise.all.md)
+  * [编程](program/README.md)
+    * [订阅发布模式](program/subscribe.md)
 * [工程化](vue/README.md)
   <!-- * [vue](vue/README.md)
     * [watchEffect和watch的区别](vue/watchEffect.md)
@@ -37,11 +39,11 @@
     * [事件循环](browser/eventloop.md)
     * [当我们输入在浏览器中输入URL，浏览器里发生了什么？](browser/browser.md)
     * [requestAnimationFrame](browser/requestAnimationFrame.md)
-  * [编程](program/README.md)
+
     * [函数式编程](program/fp.md)
     * [函数柯里化](program/curry.md)
     * [装饰器模式](program/decorator.md)
-    * [订阅发布模式](program/subscribe.md)
+    *
   * [node.js基础](nodejs/README.md)
     * [node.js里的事件循环](nodejs/eventloop.md)
   * [计算机基础](computer/README.md)
