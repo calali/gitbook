@@ -1,6 +1,7 @@
 # promise基础版本
 
 ## 请看以下测试用例
+
 ```javascript
 const a = new MyPromise((res,rej)=>{
     setTimeout(()=>{
