@@ -1,6 +1,10 @@
 # Summary
   
 * [基础](base/README.md)
+  * [浏览器](base/browser/README.md)
+    <!-- * [事件循环](browser/eventloop.md)
+    * [当我们输入在浏览器中输入URL，浏览器里发生了什么？](browser/browser.md)
+    * [requestAnimationFrame](browser/requestAnimationFrame.md) -->
   * [javascript](base/javascript/readme.md)
     * [函数](base/javascript/function.md)
       * [this](base/javascript/function/this.md)
@@ -35,10 +39,6 @@
     * [flat](javascript/flat.md)
     * [iterator](javascript/iterator.md) -->
 
-<!-- * [浏览器](browser/README.md)
-    * [事件循环](browser/eventloop.md)
-    * [当我们输入在浏览器中输入URL，浏览器里发生了什么？](browser/browser.md)
-    * [requestAnimationFrame](browser/requestAnimationFrame.md)
 
     * [函数式编程](program/fp.md)
     * [函数柯里化](program/curry.md)
@@ -48,4 +48,4 @@
     * [node.js里的事件循环](nodejs/eventloop.md)
   * [计算机基础](computer/README.md)
     * [算法与数据结构](computer/arg.md)
-    * [编码原则](computer/princple.md) -->
+    * [编码原则](computer/princple.md)

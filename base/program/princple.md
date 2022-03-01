@@ -1,4 +1,4 @@
-# 编码原则
+#
 
 ## 不要重复自己
 DRY（不要重复自己，don't repeat yourself）
