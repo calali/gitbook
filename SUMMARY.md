@@ -2,9 +2,6 @@
   
 * [基础](base/README.md)
   * [浏览器](base/browser/README.md)
-    <!-- * [事件循环](browser/eventloop.md)
-    * [当我们输入在浏览器中输入URL，浏览器里发生了什么？](browser/browser.md)
-    * [requestAnimationFrame](browser/requestAnimationFrame.md) -->
   * [javascript](base/javascript/readme.md)
     * [函数](base/javascript/function.md)
       * [this](base/javascript/function/this.md)
@@ -14,38 +11,14 @@
       * [promise基础版本](base/javascript/asynchronization/promise-base.md)
       * [一步步实现promise的链式调用](base/javascript/asynchronization/promise-then.md)
       * [实现promise.all和（或）promise.race](base/javascript/asynchronization/promise.all.md)
+  * [css](base/css/README.md)
   * [编程](base/program/README.md)
     * [观察者模式](base/program/subscribe.md)
-* [工程化](vue/README.md)
-  <!-- * [vue](vue/README.md)
-    * [watchEffect和watch的区别](vue/watchEffect.md)
+* [工程化](engineering/README.md)
+  * [vue](engineering/vue/README.md)
     * [vue全家福](vue/vueAll.md)
-  * [git](source/README.md)
-    * [git中常用的操作](source/http.md)
-  * [git](javascript/README.md)
-    * [git中常用的操作](javascript/loop.md  ) -->
+  * [构建](engineering/engineer/README.md)
+  * [性能](engineering/performance/README.md)
+  * [源码](engineering/source/README.md)
+    * [分析下项目中常用的 axios 的实现](engineering/source/http.md)
 * [业务](business/README.md)
-  <!-- * [投放业务](business/ad.md)
-  * [其他](other/README.md)
-    * [我心目中的优秀技术leader](other/manage.md) -->
-
-
- <!-- *
-    * [apply、call和bind](javascript/apply.md)
-    * [JavaScript运行时](javascript/runtime.md)
-    * [context](javascript/context.md)
-    * [闭包](javascript/closure.md)
-    * [reduce](javascript/reduce.md)
-    * [flat](javascript/flat.md)
-    * [iterator](javascript/iterator.md) -->
-
-
-    * [函数式编程](program/fp.md)
-    * [函数柯里化](program/curry.md)
-    * [装饰器模式](program/decorator.md)
-    *
-  * [node.js基础](nodejs/README.md)
-    * [node.js里的事件循环](nodejs/eventloop.md)
-  * [计算机基础](computer/README.md)
-    * [算法与数据结构](computer/arg.md)
-    * [编码原则](computer/princple.md)
