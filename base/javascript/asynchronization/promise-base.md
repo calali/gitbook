@@ -59,10 +59,9 @@ class MyPromise {
             throw new Error('MyPromise需要传入一个函数')
         }
         try {
-            //考虑用queueMicrotask实现？？？
-            setTimeout(()=>{
+            queueMicrotask(()=>{
                 executor(this.resolve.bind(this),this.reject.bind(this))
-            },0)
+            })
         } catch (error) {
             this.reject(error)
         }
