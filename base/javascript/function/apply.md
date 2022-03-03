@@ -1,4 +1,4 @@
-# JavaScript里的call、bind、apply实现
+# call、bind、apply实现
 
 ## call、bind、apply的相同点和不同点
 
@@ -53,7 +53,7 @@ Function.prototype.bind = function(context, ...bindArgs) {
 }
 ```
 
-### 3 修改this指向
+### 3 修改this指向(重点)
 
 来看以下例子。
 
@@ -67,7 +67,7 @@ let Person = {
 }
 
 // 先看代码执行效果
-// Person.say() //我叫Tom 
+// Person.say() //我叫Tom
 let Person1 = {
   name: 'Tom1'
 }
@@ -77,11 +77,11 @@ Person.say.call(Person1) //我叫Tom1
 ```
 call方法前是调用的函数say，call方法的第一个参数是Person1。
 
-在函数中this指向的是调用的它的对象，在上面这个例子中，this指向say方法。call的第一个参数是真正要执行的上下文Person1。
+在函数中this始终指向的是调用的它的对象，因此在上面这个例子中，this指向say对象（P.S 函数也是对象）。
 
 因此在这个上下文Person1上添加上say方法，并执行say方法。此时say方法里的this指向调用它的对象，即Person1。
 
-当当，通过为不同对象添加方法，成功改变了方法里的this指向对象！
+通过为不同对象添加方法，成功改变了方法里的this指向！
 
 ```javascript
 Function.prototype.call = function(context, ...args) {
@@ -107,9 +107,11 @@ Function.prototype.bind = function(context, ...bindArgs) {
     }
 }
 ```
+
 为什么以上代码会添加一个symbol属性到context，而不是一个普通属性呢？因为symbol可以保证独一无二的属性名，不会造成属性名的冲突，不会造成任何的意外。
 
 ### 完善
+
 删掉对context添加的属性，保持对context的整洁。并返回函数执行的结果。
 
 ```javascript
@@ -146,3 +148,4 @@ Function.prototype.bind = function(context, ...bindArgs) {
 5. <https://www.jianshu.com/p/7f2cdb8297f5>
 7. https://es6.ruanyifeng.com/#docs/function#rest-%E5%8F%82%E6%95%B0
 8. https://es6.ruanyifeng.com/#docs/symbol
+9. https://ohiamfine.github.io/2019/07/31/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3call%E6%96%B9%E6%B3%95%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/

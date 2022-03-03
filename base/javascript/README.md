@@ -6,7 +6,7 @@
 
 [✅] this
 
-[] apply、bind
+[✅] apply、bind
 
 [] 闭包
 

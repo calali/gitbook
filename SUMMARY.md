@@ -5,6 +5,7 @@
   * [javascript](base/javascript/readme.md)
     * [函数](base/javascript/function.md)
       * [this](base/javascript/function/this.md)
+      * [call、bing、apply实现](base/javascript/function/apply.md)
       * [函数传参按值传递](base/javascript/function/function-arg.md)
     * [异步](base/javascript/asynchronization.md)
       * [事件循环](base/javascript/asynchronization/eventloop.md)

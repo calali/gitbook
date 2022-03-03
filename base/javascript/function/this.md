@@ -1,9 +1,17 @@
 # javascript里的this
+
 ## 什么是this
-**this是当前[执行上下文](./context.md)（global、function 或 eval）的一个属性。在es5中，this 永远指向最后调用它的那个对象。**
+
+this是 JavaScript 语言的一个关键字。
+
+它是函数运行时，在函数体内部自动生成的一个对象，只能在函数体内部使用。
+
+**在es5中，this 永远指向最后调用它的那个对象。**
 
 ### es5中this的4种绑定方法
+
 #### 1 默认绑定
+
 **规则：在非严格模式下，函数里的默认绑定的this指向全局对象，严格模式下this指向undefined。**
 
 ```javascript
@@ -18,7 +26,8 @@
     a();
     console.log("outer:" + this)         // outer: Window
 ```
-在上面例子中，调用a函数的是全局作用域，在非严格模式下函数内的this指向window。  
+
+在上面例子中，调用a函数的是全局作用域，在非严格模式下函数内的this指向window。
 
 ```javascript
 var name = "windowsName";
@@ -26,17 +35,20 @@ var name = "windowsName";
         'use strict'
         var name = "aName";
 
-        console.log(this.name);          
+        console.log(this.name);
 
-        console.log("inner:" + this);    
+        console.log("inner:" + this);
     }
     a();
-    console.log("outer:" + this)     
+    console.log("outer:" + this)
 ```
+
 此处在严格模式执行a函数，导致全局作用域下this的值undefined，没有被转化为全局对象window，因此报错`TypeError: Cannot read property 'name' of undefined`。
 
 #### 2 隐式绑定
+
 **this指向最后调用函数的对象上。**
+
 ```javascript
 function foo() {
       console.log(this.a);
@@ -53,8 +65,11 @@ function foo() {
     obj2.foo(); // 2 this指向调用函数的对象
     obj1.obj2.foo(); // 2 this指向最后一层调用函数的对象
 ```
+
 #### 3 显式绑定
+
 **通过call、bind、apply修改this指向。**
+
 ```javascript
 function foo() {
     console.log(this.a);
@@ -64,13 +79,17 @@ let obj = {
 };
 foo.call(obj); // 2
 ```
+
 > 在 JavaScript 严格模式(strict mode)下, 在调用函数时第一个参数会成为 this 的值， 即使该参数不是一个对象。
-> 
-> 在 JavaScript 非严格模式(non-strict mode)下, 如果第一个参数的值是 null 或 undefined, 它将使用全局对象替代。  
+>
+> 在 JavaScript 非严格模式(non-strict mode)下, 如果第一个参数的值是 null 或 undefined, 它将使用全局对象替代。
 
 #### 4 new绑定
+
 **规则：使用构造调用的时候，this会自动绑定在new期间创建的对象上。**
+
 ```javascript
+
 function Foo(a) {
   this.a = a; // this绑定到bar上
 }
@@ -79,37 +98,38 @@ console.log(bar.a); // 2
 ```
 
 ### 4种绑定方法的优先级
+
 由隐式绑定的例子可以看出，隐式绑定>默认绑定。
 
 ```javascript
 function foo() {
   console.log(this.a);
 }
- 
+
 var obj1 = {
   a: 10,
   foo,
 };
- 
+
 var obj2 = {
   a: 20,
   foo,
 };
- 
+
 obj1.foo();   //10
 obj2.foo();   //20
- 
+
 obj1.foo.call(obj2);   //20
 obj2.foo.call(obj1);   //10
 ```
-由以上例子可以看出显式绑定 > 隐式绑定。
 
+由以上例子可以看出显式绑定 > 隐式绑定。
 
 ```javascript
 function Foo() {
   this.a = 'foo';
 }
- 
+
 let obj = {
   a: 'obj'
 };
@@ -119,25 +139,27 @@ const Bar = Foo.bind(obj);
 const bar = new Bar();
 console.log(obj.a, '--', bar.a) 
 ```
+
 bar.a还是Foo构造函数的值，并没有被bind影响，因此可知new绑定 > 显式绑定。
 
 综上，**new绑定 > 显式绑定 > 隐式绑定 > 默认绑定**。
 
 ## es6中的箭头函数
 
- ES6 的箭头函数使得this总是指向函数定义时的上下文的this，和es5的函数this取决于调用时不同。
+ES6 的箭头函数使得this总是指向函数定义时的上下文的this，和es5的函数this取决于调用时不同。
+
 ```javascript
 var a = 1
 var foo = () =>{
   console.log(this.a);
 }
- 
+
 var obj1 = {
   a: 10,
   foo,
 };
 
- 
+
 obj1.foo();   // 1
 ```
 打印出来是1，因为函数foo定义在全局作用域中，this永远指向全局作用域。
@@ -153,7 +175,7 @@ obj1.foo();   // 1
    }
  }
  var person2 = { name: 'person2' }
- 
+
  person1.show()()  //person1
  person1.show().call(person2) //person1
  person1.show.call(person2)() // person2
