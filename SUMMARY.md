@@ -7,6 +7,8 @@
       * [this](base/javascript/function/this.md)
       * [call、bing、apply实现](base/javascript/function/apply.md)
       * [函数传参按值传递](base/javascript/function/function-arg.md)
+      * [闭包](base/javascript/function/closure.md)
+      * [作用域](base/javascript/function/context.md)
     * [异步](base/javascript/asynchronization.md)
       * [事件循环](base/javascript/asynchronization/eventloop.md)
       * [promise基础版本](base/javascript/asynchronization/promise-base.md)
