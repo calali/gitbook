@@ -6,6 +6,7 @@
    * [基础](base/javascript/bas/readme.md)
       * [迭代器](base/javascript/base/iterator.md)
       * [runtime](base/javascript/base/runtime.md)
+      * [原型](base/javascript/base/prototype.md)
     * [函数](base/javascript/function.md)
       * [this](base/javascript/function/this.md)
       * [call、bind、apply实现](base/javascript/function/apply.md)
