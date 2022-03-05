@@ -8,7 +8,7 @@
       * [runtime](base/javascript/base/runtime.md)
     * [函数](base/javascript/function.md)
       * [this](base/javascript/function/this.md)
-      * [call、bing、apply实现](base/javascript/function/apply.md)
+      * [call、bind、apply实现](base/javascript/function/apply.md)
       * [函数传参按值传递](base/javascript/function/function-arg.md)
       * [闭包](base/javascript/function/closure.md)
       * [作用域](base/javascript/function/context.md)
