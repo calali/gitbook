@@ -13,9 +13,6 @@ JavaScript代码由JavaScript引擎执行。在执行的过程中，需要维护
 某些JavaScript引擎可能会多个代理之间共享主线程。除了主线程之外的其他部分对该代理都是唯一的。
 即每个网页的页面的1、2、4、5、6都是该网页唯一拥有的内容，不会在多个网页之间共享。
 
-
-以Chrome浏览器里的运行时环境为例，下如图所示：
-![JavaScript runtime](https://user-gold-cdn.xitu.io/2019/3/3/16943fd819a25a8a?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
 ## 组成部分
 
 ### JavaScript引擎
@@ -44,7 +41,7 @@ JavaScript引擎包含堆内存和调用栈。一个JavaScript引擎只有一个
 持续地检查调用栈和回调队列。当调用栈空了后，事件循环会把回调队列里面存储的最前面的回调函数放到调用栈里执行。当调用栈执行完毕后，事件循环会继续把回调函数放到调用栈里执行。
 这就是JavaScript能够异步非阻塞地执行的原因。
 
-关于事件循环的具体执行过程，可以看[这里](./../browser/eventloop.md)。
+关于事件循环的具体执行过程，可以看[这里](./../asynchronization/eventloop.md)。
 ## JavaScript引擎
 JavaScript是一种高级的、解释型语言，并不能直接由计算机运行。它由JavaScript引擎解析成计算机可以识别的机器语言。
 chrome浏览器和node.js里的JavaScript解析器是著名的v8引擎。
@@ -54,5 +51,3 @@ chrome浏览器和node.js里的JavaScript解析器是著名的v8引擎。
 2. https://blog.bitsrc.io/javascript-internals-javascript-engine-run-time-environment-settimeout-web-api-eeed263b1617
 3. https://olinations.medium.com/the-javascript-runtime-environment-d58fa2e60dd0
 4. https://juejin.cn/post/6844903788977848334
-## 问题
-1. 调用栈里只有函数吗》
