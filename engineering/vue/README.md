@@ -1,5 +1,7 @@
 # vue
 
+[]vue自定义指令，eg.v-loading
+
 []nextTick
 
 []vue compiler
